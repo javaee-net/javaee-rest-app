@@ -1,5 +1,7 @@
 package net.javaaee.restapp.model;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -74,4 +76,15 @@ public class User {
                 ", email='" + email + '\'' +
                 '}';
     }
+    
+    public Set<String> getDeviceTokens() {
+		return deviceTokens;
+	}
+
+	public void setDeviceTokens(Set<String> deviceTokens) {
+		this.deviceTokens = deviceTokens;
+	}
+
+	private Set<String> deviceTokens; // Stores FCM device tokens for push notifications
+    
 }
